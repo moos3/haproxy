@@ -54,7 +54,7 @@ def cfg_frontend(vhost):
         frontend.append("reqadd X-Forwarded-Proto:\ https")
         frontend.append("redirect scheme https code 301 if !{ ssl_fc }"),
         frontend.append("bind 0.0.0.0:443 %s" % SSL)
-        frontend.append('acl secure dst_port eq 44")
+        frontend.append('acl secure dst_port eq 443')
         frontend.append('redirect scheme https if !{ ssl_fc }')
         frontend.append('rspadd Strict-Transport-Security:\ max-age=31536000;\ includeSubDomains;\ preload')
         frontend.append('rsprep ^Set-Cookie:\ (.*) Set-Cookie:\ \1;\ Secure if secure')
